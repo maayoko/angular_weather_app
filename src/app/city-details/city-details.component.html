@@ -1,0 +1,43 @@
+<div @enterLeave class="city-details bg-primary text-white" *ngIf="city">
+    <div class="container">
+        <div class="text-center position-relative">
+            <a class="text-white no-text-decoration" routerLink="/">
+                <i class="wi wi-direction-left position-absolute animate-arrow"></i>
+            </a>
+            <h1>{{city.cityDetails.name}}, <small>{{city.cityDetails.country | uppercase}}</small></h1>
+            <p><i class="wi {{city._5DayWeather[0].weather_by_hour[0].icon}}"></i></p>
+            <p>{{city._5DayWeather[0].weather_by_hour[0].temp}} &deg;</p>
+            <ul class="list-inline">
+                <li class="list-inline-item">
+                    {{city._5DayWeather[0].weather_by_hour[0].temp_min}} &deg;
+                </li>
+                <li class="list-inline-item">
+                    {{city._5DayWeather[0].weather_by_hour[0].temp_max}} &deg;
+                </li>
+            </ul>
+            <ul class="list-inline">
+                <li class="list-inline-item">
+                    <i class="wi wi-small-craft-advisory"></i> {{city._5DayWeather[0].weather_by_hour[0].wind_speed}} m/s
+                </li>
+                <li class="list-inline-item">
+                    <i class="wi wi-barometer"></i> {{city._5DayWeather[0].weather_by_hour[0].pressure}} hpa
+                </li>
+                <li class="list-inline-item">
+                    <i class="wi wi-humidity"></i> {{city._5DayWeather[0].weather_by_hour[0].humidity}} %
+                </li>
+            </ul>
+            <hr class="bg-white"/>
+            <div class="row">
+                <div class="col-sm weather-by-day" *ngFor="let day of city._5DayWeather">
+                    <a routerLink="/{{city.cityDetails.name | lowercase}}/{{day.day_short | lowercase}}">
+                        <p>{{day.day_short}}</p>
+                        <p><i class="wi {{day.weather_by_hour[0].icon}}"></i></p>
+                        <div class="list-inline">
+                            {{day.weather_by_hour[0].temp_max}}/{{day.weather_by_hour[0].temp_min}}
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

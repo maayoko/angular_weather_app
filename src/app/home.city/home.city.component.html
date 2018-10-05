@@ -1,0 +1,30 @@
+<div @enterLeave class="home-city">
+    <a routerLink="/{{city.cityDetails.name | lowercase}}">
+        <div class="card bg-primary border-0 text-light shadow rounded">
+            <div class="card-body">
+                <!-- <i class="wi wi-refresh"></i> -->
+                <h5 class="card-title text-right">{{city.cityDetails.name}}, 
+                    <small>{{city.cityDetails.country | uppercase}}</small>
+                </h5>
+                <p class="card-text text-center">{{city.currentWeather.weather_main}}</p>
+                <p class="card-text text-center">
+                    <i class="wi {{city.currentWeather.icon}}"></i>
+                </p>
+                <!-- <ul class="list-inline">
+                    <li class="list-inline-item">
+                        <i class="wi wi-small-craft-advisory"></i> {{city.currentWeather.wind_speed}} m/s
+                    </li>
+                    <li class="list-inline-item">
+                        <i class="wi wi-barometer"></i> {{city.currentWeather.pressure}} hpa
+                    </li>
+                    <li class="list-inline-item">
+                        <i class="wi wi-humidity"></i> {{city.currentWeather.humidity}} %
+                    </li>
+                </ul> -->
+                <h1 class="card-text home-city-deg">{{city.currentWeather.temp}} 
+                    <span>&#xb0;</span>
+                </h1>
+                </div>
+        </div>
+    </a>
+</div>

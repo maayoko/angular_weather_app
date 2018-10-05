@@ -1,0 +1,21 @@
+<div @enterLeave class="hour-weather" *ngIf="weatherForTheDay">
+    <div class="container position-relative">
+        <a class="no-text-decoration" routerLink="/{{city.cityDetails.name | lowercase}}">
+            <i class="wi wi-direction-left position-absolute animate-arrow"></i>
+        </a>
+        <table class="table table-borderless">
+            <thead>
+                <tr>
+                    <th colspan="3">{{weatherForTheDay.weather_by_hour[0].date | date: "EEEE MMMM dd, yyyy"}} - {{city.cityDetails.name}} ({{city.cityDetails.country}})</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let weather of weatherForTheDay.weather_by_hour">
+                    <td class="align-middle">{{weather.date | date: "HH:mm"}}</td>
+                    <td class="align-middle"><i class="wi {{weather.icon}}"></i></td>
+                    <td class="align-middle">{{weather.temp}} &deg;</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

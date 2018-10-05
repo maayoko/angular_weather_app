@@ -1,0 +1,79 @@
+.city-details {
+    padding: 5rem 0;
+    min-height: 100vh;
+
+    .weather-by-day {
+        padding: 1rem 0;
+        transition: box-shadow .3s, transform .3s;
+
+        &:hover {
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+        }
+
+        &:active {
+            transform: scale(.98);
+        }
+
+        &>a {
+            color: white;
+            text-decoration: none;
+
+            & > p:first-of-type {
+                font-size: 1.5rem;
+            }
+
+            & > p:nth-of-type(2) > i {
+                font-size: 3rem;
+            }
+
+            & > div {
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    &>div>div> {
+
+        a>i {
+            left: 0;
+            font-size: 5rem;
+            top: 0.8rem;
+            width: 80px;
+        }
+
+        h1 {
+            font-size: 5rem;
+            font-weight: 300;
+        }
+
+        p:first-of-type>i {
+            font-size: 7rem;
+            margin-top: 2.5rem;
+        }
+
+        p:nth-of-type(2) {
+            margin-top: 1rem;
+            font-size: 4rem;
+            font-weight: 300;
+        }
+
+        ul:first-of-type {
+            & > li {
+                font-size: 2rem;
+
+                &:first-of-type {
+                    margin-right: 3rem;
+                }
+            }
+        }
+
+        ul:last-of-type {
+            margin: 3rem 0; 
+            font-size: 1.5rem;
+
+            & > li:not(:last-of-type) {
+                margin-right: 2rem;
+            }
+        }
+    }
+}

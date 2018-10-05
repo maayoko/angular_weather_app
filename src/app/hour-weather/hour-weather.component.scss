@@ -1,0 +1,25 @@
+.hour-weather {
+    padding: 5rem 0;
+    background-color: rgba(0, 111, 255, 0.17);
+    min-height: 100vh;
+
+    div {
+        background-color: #007bff; 
+        border-radius: 0.5rem; 
+        color: white; 
+        padding: 1rem; 
+        max-width: 720px;
+
+        a > i {
+            color: #82b4ff; 
+            left: 0; 
+            font-size: 3.5rem; 
+            top: 0.8rem; 
+            left: -3rem;
+        }
+
+        table > tbody > tr > td:nth-last-of-type(2) {
+            font-size: 2rem;
+        }
+    }
+}

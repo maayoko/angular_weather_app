@@ -1,0 +1,46 @@
+.home-city {
+
+    & > a:hover {
+        text-decoration: none;
+    }
+
+    .card {
+        height: 23rem;
+        transition: transform .3s;
+    
+        &:hover {
+            transform: scale(1.02);
+        }
+
+        &:active {
+            transform: scale(1.01)
+        }
+    
+        .home-city-deg {
+            position: absolute;
+            bottom: 1.25rem;
+            font-size: 4.5rem;
+    
+            & > span {
+                position: relative;
+                left: -0.5rem;
+            }
+        }
+    
+        .card-body {
+    
+            p.card-text {
+    
+                &:first-of-type {
+                    margin-top: 3rem;
+                }
+        
+                & > .wi {
+                    font-size: 4.5rem;
+                }
+            }
+    
+        }
+    }
+
+}

@@ -1,0 +1,26 @@
+<div class="home">
+    <div class="container text-center">
+        <div class="logo">
+            <div class="position-relative d-inline-block">
+                <i class="wi wi-cloud"></i>
+                <strong class="position-relative d-block">SKY WEATHER</strong>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <app-home-cities class="col-sm-3" *ngFor="let city of cities"
+            [city]="city">
+            </app-home-cities>  
+            <!-- <div class="home-city">
+                <a routerLink="/search">
+                    <div class="card bg-primary border-0 text-light rounded">
+                        <div class="card-body">
+
+                        </div>
+                    </div>
+                </a>
+            </div>   -->
+        </div>
+    </div>
+</div>

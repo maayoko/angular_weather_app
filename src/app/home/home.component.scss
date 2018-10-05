@@ -1,0 +1,18 @@
+.home {
+    min-height: 100vh;
+    background-color: rgba(0,111,255, .17);
+    padding: 4rem;
+
+    .logo {
+        margin-bottom: 2rem;
+        color: #82b4ff;
+
+        & i {
+            font-size: 8rem;
+        }
+
+        & > div > strong {
+            bottom: 1rem;
+        }
+    }
+}
