@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
     public ngOnInit(): void {
 
         if (document && window.navigator) {
-            if (~window.navigator.userAgent.indexOf("Chrome")) {
+            if (!~window.navigator.userAgent.indexOf("Chrome")) {
                 alert("Use Chrome browser for full support");
             }
         }
