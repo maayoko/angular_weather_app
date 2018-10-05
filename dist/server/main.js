@@ -211,7 +211,7 @@ var AppComponent = /** @class */ (function () {
     }
     AppComponent.prototype.ngOnInit = function () {
         var _this = this;
-        if (document && window.navigator) {
+        if (window && window.navigator) {
             if (!~window.navigator.userAgent.indexOf("Chrome")) {
                 alert("Use Chrome browser for full support");
             }
