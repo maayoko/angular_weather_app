@@ -211,6 +211,11 @@ var AppComponent = /** @class */ (function () {
     }
     AppComponent.prototype.ngOnInit = function () {
         var _this = this;
+        if (document && window.navigator) {
+            if (~window.navigator.userAgent.indexOf("Chrome")) {
+                alert("Use Chrome browser for full support");
+            }
+        }
         this.weatherService.cities$.forEach(function (cities) {
             cities.forEach(function (city) {
                 _this.weatherService.addCityWeather(city);
@@ -1278,7 +1283,7 @@ exports.LAZY_MODULE_MAP = {};
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /mnt/hgfs/shared/angular_universal/src/main.server.ts */"./src/main.server.ts");
+module.exports = __webpack_require__(/*! /mnt/hgfs/shared/angular_weather_app/src/main.server.ts */"./src/main.server.ts");
 
 
 /***/ }),
