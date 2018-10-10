@@ -2,12 +2,6 @@ import { Injectable } from '@angular/core';
 
 import { Observable, BehaviorSubject, Subject } from 'rxjs';
 import { map, scan, publishReplay, refCount } from 'rxjs/operators';
-
-import {
-    OPEN_WEATHER_MAP_API_HOSTNAME,
-    OPEN_WEATHER_MAP_5_DAY_API,
-    OPEN_WEATHER_MAP_CURRENT_DAY_API
-} from './openweathermap/constants/openWeatherMap';
 import { ICityModel } from "./weather.model";
 import { OpenWeatherProvider } from "./openweathermap/openWeatherProvider";
 
@@ -18,20 +12,22 @@ const initialCities: string[] = ["Zagreb", "Split", "Rijeka", "Osijek"];
 
 @Injectable()
 export class WeatherService {
+    // For adding cities by user
+    // Not fully implemented
     cities$: Observable<string[]>;
 
     updateCities$: BehaviorSubject<CitiesOperation> = new BehaviorSubject<CitiesOperation>((city: string[]) => city);
 
     getCity$: Subject<string> = new Subject();
 
+    // For getting cities info
     citiesWeather$: Observable<Map<string, ICityModel>>;
 
     updateCitiesWeather$: BehaviorSubject<CitiesWeatherOperation> = new BehaviorSubject<CitiesWeatherOperation>((cities) => cities);
 
     addCityWeather$: Subject<ICityModel> = new Subject();
 
-
-    constructor(private openWeatherProvider: OpenWeatherProvider) {
+    constructor(private weatherProvider: OpenWeatherProvider /* it should be IWeatherProvider, but dep. injection doesn't work with interfaces */) {
 
         this.cities$ = this.updateCities$.pipe(
             scan((cities: string[], operation: CitiesOperation) => operation(cities), initialCities),
@@ -62,11 +58,11 @@ export class WeatherService {
     }
 
     public addCityWeather(cityName: string): void {
-        this.openWeatherProvider.getFullWeatherByCityName(cityName)
+        this.weatherProvider.getFullWeatherByCityName(cityName)
             .subscribe((cityWeather: ICityModel) => this.addCityWeather$.next(cityWeather));
     }
 
     public getCity(): void {
-
+        // TBD
     }
 }

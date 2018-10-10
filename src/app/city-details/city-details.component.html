@@ -6,13 +6,13 @@
             </a>
             <h1>{{city.cityDetails.name}}, <small>{{city.cityDetails.country | uppercase}}</small></h1>
             <p><i class="wi {{city._5DayWeather[0].weather_by_hour[0].icon}}"></i></p>
-            <p>{{city._5DayWeather[0].weather_by_hour[0].temp}} &deg;</p>
+            <p>{{city.currentWeather.temp}} &deg;</p>
             <ul class="list-inline">
                 <li class="list-inline-item">
-                    {{city._5DayWeather[0].weather_by_hour[0].temp_min}} &deg;
+                    {{city._5DayWeather[0].min_temp}} &deg;
                 </li>
                 <li class="list-inline-item">
-                    {{city._5DayWeather[0].weather_by_hour[0].temp_max}} &deg;
+                    {{city._5DayWeather[0].max_temp}} &deg;
                 </li>
             </ul>
             <ul class="list-inline">
@@ -33,7 +33,7 @@
                         <p>{{day.day_short}}</p>
                         <p><i class="wi {{day.weather_by_hour[0].icon}}"></i></p>
                         <div class="list-inline">
-                            {{day.weather_by_hour[0].temp_max}}/{{day.weather_by_hour[0].temp_min}}
+                            {{day.max_temp}}/{{day.min_temp}}
                         </div>
                     </a>
                 </div>

@@ -40,9 +40,6 @@ mapIcons.set("13n", "wi-night-alt-snow");
 mapIcons.set("50d", "wi-fog");
 mapIcons.set("50n", "wi-fog");
 
-const mapColors: Map<string, string> = new Map();
-// mapColors.set("")
-
 export function getWeatherIconText(icon: string): string {
     if (mapIcons.has(icon)) {
         return mapIcons.get(icon);
@@ -50,7 +47,3 @@ export function getWeatherIconText(icon: string): string {
 
     return "wi-cloud";
 }
-
-// export function defineHomeCardBgColor(icon: string): string {
-
-// }

@@ -12,7 +12,7 @@ import { OpenWeatherProvider }  from "./openweathermap/openWeatherProvider";
 
 import { PLATFORM_ID, APP_ID, Inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { HomeCityComponent } from './home.city/home.city.component';
+import { HomeCityComponent } from './home-city/home-city.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CityDetailsComponent } from './city-details/city-details.component';
 import { SplashComponent } from './splash/splash.component';

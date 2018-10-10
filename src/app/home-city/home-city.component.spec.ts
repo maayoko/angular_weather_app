@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HomeCityComponent } from './home.city.component';
+import { HomeCityComponent } from './home-city.component';
 import { WeatherService } from '../weather.service';
 
 describe('Home.CityComponent', () => {
